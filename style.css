@@ -1,0 +1,572 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0D0D0D;
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0c0c0c;
+    padding: 32px 64px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 65px;
+    position: relative;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 300;
+    display: inline-block;
+    position: relative;
+}
+
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    border-radius: 50px;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #EC6C1F;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease-in-out;
+}
+
+.nav-links li a:hover::after {
+    transform: scaleX(1);
+}
+
+.cta-button {
+    cursor: pointer;
+    position: relative;
+    padding: 8px 28px;
+    font-size: 16px;
+    color: white;
+    border: 2px solid #EC6C1F;
+    border-radius: 50px;
+    background-color: transparent;
+    font-weight: 400;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 140px;
+    height: 50px;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: #EC6C1F;
+    transition: all 1.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.cta-button:hover::before {
+    scale: 2;
+}
+
+.cta-button:hover {
+    color: #212121;
+    scale: 1.08;
+    box-shadow: 0 0px 20px rgba(236, 108, 31, 0.4);
+}
+
+.cta-button:active {
+    scale: 1.08;
+}
+
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 3.3%;
+    gap: 40px;
+    background-color: #0c0c0c;
+    min-height: 100vh;
+}
+
+.hero-content {
+    max-width: 34%;
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    color: white;
+    font-weight: 600;
+}
+
+.hero-content p {
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #C9C9C9;
+    text-align: justify;
+}
+
+.btn {
+    display: inline-block;
+    background: #EC6C1F;
+    padding: 12px 30px;
+    text-decoration: none;
+    color: #0D0D0D;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background: #ff6200;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hero-image {
+    flex-shrink: 0;
+    animation: fadeInRight 0.8s ease-out;
+}
+
+.hero-image img {
+    max-width: 100%;
+    width: 540px;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.sobre {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex;
+    /* Alterado para flex-start */
+    padding: 160px 3.3%;
+    gap: 60px;
+    background-color: #0c0c0c;
+    min-height: 100vh;
+}
+
+.sobre-content {
+    max-width: 40%;
+}
+
+.sobre-content h1 {
+    font-size: 56px;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    color: white;
+    font-weight: 600;
+}
+
+.sobre-content p {
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #C9C9C9;
+    text-align: justify;
+}
+
+.sobre-processo {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 35%;
+}
+
+.processo-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.processo-icone {
+    width: 120px;
+    height: 120px;
+    border-radius: 20%;
+    background-color: #EC6C1F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.processo-icone span {
+    color: #FF6B35;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.processo-texto h3 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 8px;
+    font-weight: 300;
+}
+
+.processo-texto p {
+    color: #C9C9C9;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.servicos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Alterado para flex-start */
+    padding: 80px 3.3%;
+    gap: 65px;
+    background-color: #0c0c0c;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.servicos-content {
+    max-width: 100%;
+    display: flex;
+    gap: 55px;
+}
+
+.servicos-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.servicos-icone {
+    width: 405px;
+    height: 340px;
+    border-radius: 12px;
+    background-color: #131313;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 32px;
+    gap: 20px;
+    color: #C9C9C9;
+    font-weight: 500;
+}
+
+.servicos-icone img {
+    width: 35%;
+    height: 35%;
+}
+
+.servicos-text h1 {
+    font-size: 56px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 5%;
+}
+
+.servicos-text p {
+    font-size: 18px;
+    color: #C9C9C9;
+    text-align: justify;
+}
+
+.servicos-content1 {
+    gap: 55px;
+    display: flex;
+}
+
+.footer-modern {
+    background-color: #0c0c0c;
+    color: white;
+    padding: 80px 3.3%;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-container {
+    max-width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+    display: flex;
+    gap: 50px;
+}
+
+.footer-section {
+    flex: 1;
+    max-width: 45%;
+}
+
+.footer-logo {
+    width: 150px;
+    margin-bottom: 30px;
+}
+
+.footer-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #C9C9C9;
+    margin-bottom: 30px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #EC6C1F;
+}
+
+.footer-icon {
+    width: 24px;
+    height: 24px;
+    color: currentColor;
+}
+
+.footer-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.footer-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #C9C9C9;
+}
+
+/* ===== RESPONSIVIDADE PARA CELULAR ===== */
+@media (max-width: 768px) {
+
+    /* Ajustes gerais */
+    .navbar {
+        padding: 16px 10px;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    /* Menu simplificado - sem hamburger */
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links li a {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .cta-button {
+        padding: 6px 15px;
+        font-size: 14px;
+    }
+
+    /* Hero section - sem imagem */
+    .hero {
+        flex-direction: column;
+        padding: 30px 20px 10px;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        display: none;
+        /* Remove a imagem */
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+        text-align: start;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        text-align: justify;
+    }
+
+    /* Sobre section - alinhamento melhorado */
+    .sobre {
+        flex-direction: column;
+        padding: 20px 20px 50px;
+        /* Top: 20px | Laterais: 20px | Bottom: 50px */
+        margin-top: -350px;
+        /* Remove um pouco do espaço superior */
+        text-align: start;
+    }
+
+    .sobre-content {
+        max-width: 100%;
+    }
+
+    .sobre-content h1 {
+        font-size: 28px;
+        margin-top: 84px;
+    }
+
+    .sobre-content p {
+        text-align: justify;
+        font-size: 16px;
+
+    }
+
+    .sobre-processo {
+        width: 100%;
+    }
+
+    .processo-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Serviços section */
+    .servicos {
+        padding: 40px 20px;
+    }
+
+    .servicos-content {
+        flex-direction: column;
+    }
+
+    .servicos-text {
+        order: -1;
+        /* Move o texto para cima */
+        margin-bottom: 30px;
+    }
+
+    .servicos-text h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .servicos-content,
+    .servicos-content1 {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .servicos-icone {
+        width: 100%;
+        height: auto;
+        min-height: 160px;
+        padding: 25px;
+    }
+
+    /* Rodapé */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        /* Reduzi um pouco o gap para mobile */
+        padding: 20px 0;
+        /* Adicionei padding vertical */
+    }
+
+    .footer-section {
+        width: 100%;
+        /* Mudei de max-width para width */
+        text-align: center;
+        /* Troquei margin por padding para melhor controle */
+        box-sizing: border-box;
+        /* Importante para o padding não afetar a width */
+    }
+
+    .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        /* Permite que os ícones quebrem linha se necessário */
+        gap: 15px;
+        /* Espaço entre os ícones */
+    }
+
+    .footer-links a {
+        margin: 0 4px;
+        /* Espaçamento entre os ícones */
+    }
+}
+
+/* Preloader Styles */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0D0D0D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.pulsing-ball {
+    width: 50px;
+    height: 50px;
+    background-color: #EC6C1F;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite ease-in-out;
+    box-shadow: 0 0 10px rgba(236, 108, 31, 0.6);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+}
+
+/* Evita scroll durante o preloader */
+body.loading {
+    overflow: hidden;
+}
